@@ -1,0 +1,29 @@
+Recursive insertion works by starting at the root of the tree and
+checking whether the current employee is the manager we are looking
+for. If the manager is found, the program checks whether the requested
+left or right position is available. If it is available, a new
+EmployeeNode is created and connected to that position. If the manager
+is not found at the current node, the method recursively searches
+the left and right subtrees. This continues until the manager is
+found or the entire tree has been searched.
+
+One challenge was searching for a manager without accidentally
+restarting the search at the root. When a child pointer is None,
+the program must stop searching that branch instead of restarting
+the insertion process. Another challenge was preventing employees
+from being added to positions that are already occupied. The program
+handles these situations by checking each pointer before insertion
+and displaying helpful error messages when an operation cannot be
+completed. It also checks that a valid side is provided.
+
+Trees are useful in real-world systems when information has a
+hierarchical structure. Examples include company reporting systems,
+computer file directories, website navigation menus, and family
+trees. A tree makes relationships between parent and child elements
+easy to represent and traverse. Compared with a flat list, a tree
+can make it easier to find related information and organize complex
+relationships. However, this implementation is a binary tree, so
+each employee can have at most two direct reports. A real company
+directory may need a general tree that allows managers to supervise
+many employees. The current implementation also searches employees
+sequentially, taking O(n) time in the worst case for insertion.
